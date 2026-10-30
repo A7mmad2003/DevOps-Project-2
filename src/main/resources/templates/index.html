@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<main class="container">
+    <header>
+        <p class="eyebrow">SIMPLE PRODUCTIVITY</p>
+        <h1>Task Manager</h1>
+        <p class="subtitle">Keep track of what needs to get done.</p>
+    </header>
+
+    <form class="add-form" th:action="@{/tasks}" method="post">
+        <input type="text" name="title" placeholder="Add a new task..." required maxlength="120">
+        <button type="submit">Add task</button>
+    </form>
+
+    <section class="task-panel">
+        <div class="panel-heading">
+            <h2>Your tasks</h2>
+            <span class="count" th:text="${tasks.size()} + ' total'">0 total</span>
+        </div>
+
+        <p class="empty" th:if="${#lists.isEmpty(tasks)}">No tasks yet. Add your first task above.</p>
+
+        <ul class="task-list" th:if="${!#lists.isEmpty(tasks)}">
+            <li th:each="task : ${tasks}" class="task">
+                <form th:action="@{/tasks/{id}/complete(id=${task.id})}" method="post">
+                    <button class="check-button" type="submit"
+                            th:classappend="${task.completed} ? ' checked' : ''"
+                            th:attr="aria-label=${task.completed} ? 'Mark as incomplete' : 'Mark as complete'">
+                        <span th:if="${task.completed}">✓</span>
+                    </button>
+                </form>
+
+                <span class="task-title"
+                      th:classappend="${task.completed} ? ' done' : ''"
+                      th:text="${task.title}">Task title</span>
+
+                <form th:action="@{/tasks/{id}/delete(id=${task.id})}" method="post">
+                    <button class="delete-button" type="submit" aria-label="Delete task">×</button>
+                </form>
+            </li>
+        </ul>
+    </section>
+
+    <footer>Built with Java, Spring Boot and Maven</footer>
+</main>
+</body>
+</html>

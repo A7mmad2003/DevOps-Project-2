@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f4f6fb;
+    color: #202438;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: min(620px, calc(100% - 32px));
+    margin: 70px auto;
+}
+
+header {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    color: #6475d8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 8px 0;
+    font-size: 38px;
+}
+
+.subtitle {
+    margin: 0;
+    color: #73798d;
+}
+
+.add-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.add-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #e0e3ed;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+button {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-form button {
+    padding: 0 20px;
+    border: 0;
+    border-radius: 10px;
+    background: #596bd2;
+    color: white;
+    font-weight: 700;
+}
+
+.task-panel {
+    padding: 22px;
+    border: 1px solid #e8eaf1;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 8px 24px rgba(35, 45, 85, 0.05);
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.count {
+    color: #858ba0;
+    font-size: 13px;
+}
+
+.task-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid #f0f1f5;
+}
+
+.task form {
+    margin: 0;
+}
+
+.check-button {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid #cbd0df;
+    border-radius: 50%;
+    background: white;
+    color: white;
+}
+
+.check-button.checked {
+    border-color: #596bd2;
+    background: #596bd2;
+}
+
+.task-title {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.task-title.done {
+    color: #9a9eac;
+    text-decoration: line-through;
+}
+
+.delete-button {
+    border: 0;
+    background: transparent;
+    color: #a0a5b4;
+    font-size: 23px;
+}
+
+.delete-button:hover {
+    color: #d34f5d;
+}
+
+.empty {
+    color: #858ba0;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: 24px;
+    color: #969bad;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 40px;
+    }
+
+    .add-form button {
+        padding: 0 12px;
+    }
+}
