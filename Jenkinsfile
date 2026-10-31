@@ -2,9 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Test Conflict') {
+        stage('Testing 2') {
             steps {
-                checkout scm
+                git branch: 'ahmed',
+                    credentialsId: 'github-token',
+                    url: 'https://github.com/USERNAME/taskmanager.git'
             }
         }
 
