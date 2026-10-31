@@ -5,8 +5,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'ahmed',
-                    credentialsId: 'github-token',
-                    url: 'https://github.com/USERNAME/taskmanager.git'
+                    credentialsId: 'github-secret',
+                    url: 'https://github.com/A7mmad2003/DevOps-Project-2'
             }
         }
 
