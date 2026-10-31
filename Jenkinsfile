@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Test Conflict') {
             steps {
                 checkout scm
             }
