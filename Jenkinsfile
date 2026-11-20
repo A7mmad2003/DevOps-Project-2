@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Testing 2') {
+        stage('Testing 55') {
             steps {
-                git branch: 'ahmed',
-                    credentialsId: 'github-token',
+                git branch: 'amine',
                     url: 'https://github.com/USERNAME/taskmanager.git'
             }
         }
